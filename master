@@ -1,0 +1,7 @@
+foreach($line in Get-Content .\servers_restart.txt) {
+    $line
+    invoke-command -computername $line -ScriptBlock {
+    Restart-Computer -Force
+    }
+    
+}
